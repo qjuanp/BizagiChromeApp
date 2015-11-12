@@ -12,11 +12,11 @@
     "app": {
         "background": {
             "scripts": [
-                "app.js",
-                "notifications-main.js",
                 "libs/notify.js",
+                "app/notification.js",
                 "app/services.js",
-                "app/notification.js"
+                "app.js",
+                "notifications-main.js"
             ]
         }
     }
