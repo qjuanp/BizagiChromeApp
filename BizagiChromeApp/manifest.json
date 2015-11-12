@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Bizagi BPM",
+    "description": "Bizagi BPM client operations",
+    "version": "0.1",
+    "icons": {
+        "128": "icon_128.png"
+    },
+    "permissions": [
+        "notifications"
+    ],
+    "app": {
+        "background": {
+            "scripts": [
+                "app.js",
+                "notifications-main.js",
+                "libs/notify.js",
+                "app/services.js",
+                "app/notification.js"
+            ]
+        }
+    }
+}
