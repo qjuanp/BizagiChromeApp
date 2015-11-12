@@ -1,23 +1,23 @@
-function showNotification(notificationModel){
-	var notification = new Notify('Asignación', {
-		body: 'Hola! te han asignado el ' + notificationModel.radNumber	
-				
-				+ '\nEsta es otra linea'
-				+ '\nEsta es otra linea'
-				+ '\nEsta es otra linea'
-				+ '\nEsta es otra linea',
-		icon: 'icon_128.png',
-		tag: notificationModel.idNotification,
-		notifyClick: function(ctx){onClickNotification(ctx,notificationModel)},
-		/*notifyShow: onShowNotification,
-		notifyClose: onCloseNotification,
-		notifyError: onErrorNotification,*/
-		timeout: 4
-	});
+function showNotification(notificationModel) {
+
+	var notification = buildNotification(notificationModel);
 	notification.show();
 }
 
+function buildNotification(notificationModel) {
+	var options = {};
 
-function onClickNotification(context, notificationModel){
-	window.open(notificationModel.urlTask+"/"+notificationModel.idNotification);
+	options.tag = notificationModel.id;
+	options.body = notificationModel.description;
+	options.timeout = 4;
+
+	options.icon = "img/notifications/" + notificationModel.notificationType + ".png";
+
+	options.notifyClick = function (ctx) { onClickNotification(ctx, notificationModel); }
+	
+	return new Notify(notificationModel.title, options);
+}
+
+function onClickNotification(context, notificationModel) {
+	window.open(notificationModel.url);
 }

@@ -1,14 +1,33 @@
 function getNotifications() {
 	console.log("I want a Notification");
-
+	var idNotification1 = "IdNotification" + Math.floor((Math.random() * 10) + 1);
+	/*var notificationModel = {
+		id : idNotification1,
+		title : "Assignment",
+		description : "Case: " + Math.floor((Math.random() * 10) + 1) + "\n"
+					 +"Task: " + Math.floor((Math.random() * 10) + 1),
+		url : "http://lifeandcode.io/" + idNotification1,
+		notificationType : "Assignment",
+	};*/
+	
+	/*var notificationModel = {
+		id : idNotification1,
+		title : "SLA",
+		description : "Case: " + Math.floor((Math.random() * 10) + 1) + "\n"
+					 +"Task: " + Math.floor((Math.random() * 10) + 1) + "\n"
+					 +"State: Warning!",
+		url : "http://lifeandcode.io/" + idNotification1,
+		notificationType : "state_yellow",
+	};*/
+	
 	var notificationModel = {
-		idNotification: "IdNotification" + Math.floor((Math.random() * 10) + 1),
-		idWorkItem : 1,
-		idCase : 2,
-		idTask : 5,
-		radNumber: "CO-123912",
-		urlTask : "http://lifeandcode.io",
-		taskName : "ACTIVIDAD PENDIENTE"
+		id : idNotification1,
+		title : "SLA",
+		description : "Case: " + Math.floor((Math.random() * 10) + 1) + "\n"
+					 +"Task: " + Math.floor((Math.random() * 10) + 1) + "\n"
+					 +"State: Warning!",
+		url : "http://lifeandcode.io/" + idNotification1,
+		notificationType : "state_red",
 	};
 	
 	showNotification(notificationModel);
