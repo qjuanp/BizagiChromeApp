@@ -20,9 +20,9 @@ namespace WebAppi.Controllers
         public IHttpActionResult GetTestRESTService()
         {
             return Ok(new NotificationModel{
-                id = "02020",
+                idNotification = "02020",
                 title = "Assignment",
-                description = "Case : 02390238 \n Task : Onboarding \n Due Date : 10/10/2015 ",
+                description = "Case : 02390238 \nTask : Onboarding \nDue Date : 10/10/2015 ",
                 url = "http://www.bizagi.com",
                 notificationType  = "Assignment"
             });
@@ -31,7 +31,7 @@ namespace WebAppi.Controllers
 
 
     public class NotificationModel {
-        public string id { get; set; }
+        public string idNotification { get; set; }
         public string title { get; set; }
         public string description { get; set; }
         public string url { get; set; }

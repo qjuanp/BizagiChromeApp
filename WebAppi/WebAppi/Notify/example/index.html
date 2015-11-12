@@ -35,8 +35,6 @@
         };
         function doNotification(obj) {
 
-            
-
             function onShowNotification() {
                 console.log('notification is shown!');
             }
@@ -66,7 +64,7 @@
 
                 var myNotification = new Notify(notification.title, {
                     body: notification.description,
-                    tag: 'Bizagi',
+                    tag: notification.idNotification,
                     notifyShow: onShowNotification,
                     notifyClose: onCloseNotification,
                     notifyClick: onClickNotification,
@@ -134,10 +132,6 @@
 
             xhr.send();
         }
-
-
-
-
 
     </script>
 </body>
