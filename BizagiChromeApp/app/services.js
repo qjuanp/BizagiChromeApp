@@ -1,6 +1,6 @@
 function getNotifications() {
 	console.log("I want a Notification");
-	var idNotification1 = "IdNotification" + Math.floor((Math.random() * 10) + 1);
+	var idNotification1 = "IdNotification" + Math.floor((Math.random() * 100) + 1);
 	/*var notificationModel = {
 		id : idNotification1,
 		title : "Assignment",
@@ -23,7 +23,7 @@ function getNotifications() {
 	var notificationModel = {
 		id : idNotification1,
 		title : "SLA",
-		description : "Case: " + Math.floor((Math.random() * 10) + 1) + "\n"
+		description : "Case: " + idNotification1 + "\n"
 					 +"Task: " + Math.floor((Math.random() * 10) + 1) + "\n"
 					 +"State: Warning!",
 		url : "http://lifeandcode.io/" + idNotification1,
