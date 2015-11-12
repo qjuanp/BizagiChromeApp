@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Notify.js demo</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+        button {
+            width: 100px;
+            height: 44px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Notify.js demo</h1>
+    <p>
+        Notify.js is a simple wrapper for the Web Notification API. The GitHub repo is <a href="https://github.com/alexgibson/notify.js">here</a>.
+    </p>
+    <p>Click the button below to fire up a notification. Currently supported in Chrome, Safari, Firefox and Firefox OS.</p>
+    <button id="my-button">Notify Me!</button>
+    <!-- JavaScript assets -->
+    <script src="../notify.js"></script>
+    <script>
+
+        function callNotification() {
+            setInterval(makeCorsRequest, 3000);
+        }
+
+        window.onload = function () {
+            alert("Inicio");
+            callNotification();
+        };
+        function doNotification(obj) {
+
+            
+
+            function onShowNotification() {
+                console.log('notification is shown!');
+            }
+
+            function onCloseNotification() {
+                console.log('notification is closed!');
+            }
+
+            function onClickNotification() {
+                console.log('notification was clicked!');
+            }
+
+            function onErrorNotification() {
+                console.error('Error showing notification. You may need to request permission.');
+            }
+
+            function onPermissionGranted() {
+                console.log('Permission has been granted by the user');
+                doNotification();
+            }
+
+            function onPermissionDenied() {
+                console.warn('Permission has been denied by the user');
+            }
+
+            function doNotification(notification) {
+
+                var myNotification = new Notify(notification.title, {
+                    body: notification.description,
+                    tag: 'Bizagi',
+                    notifyShow: onShowNotification,
+                    notifyClose: onCloseNotification,
+                    notifyClick: onClickNotification,
+                    notifyError: onErrorNotification,
+                    timeout: 4
+                });
+
+                myNotification.show();
+
+            }
+
+            if (!Notify.needsPermission) {
+                doNotification(obj);
+            } else if (Notify.isSupported()) {
+                Notify.requestPermission(onPermissionGranted, onPermissionDenied);
+            }
+
+        }
+
+
+        // Create the XHR object.
+        function createCORSRequest(method, url) {
+            var xhr = new XMLHttpRequest();
+            if ("withCredentials" in xhr) {
+                // XHR for Chrome/Firefox/Opera/Safari.
+                xhr.open(method, url, true);
+            } else if (typeof XDomainRequest != "undefined") {
+                // XDomainRequest for IE.
+                xhr = new XDomainRequest();
+                xhr.open(method, url);
+            } else {
+                // CORS not supported.
+                xhr = null;
+            }
+            return xhr;
+        }
+
+        // Helper method to parse the title tag from the response.
+        function getTitle(text) {
+            return text.match('<title>(.*)?</title>')[1];
+        }
+
+        // Make the actual CORS request.
+        function makeCorsRequest() {
+
+            // All HTML5 Rocks properties support CORS.
+            var url = 'http://localhost:39774/api/Fedex/TestRESTService';
+
+            var xhr = createCORSRequest('GET', url);
+            if (!xhr) {
+                alert('CORS not supported');
+                return;
+            } 
+
+            // Response handlers.
+            xhr.onload = function () {
+                var objNotification = JSON.parse(xhr.responseText);
+                doNotification(objNotification);
+
+            };
+
+            xhr.onerror = function (e) {
+                alert('Woops, there was an error making the request.' + e.toString());
+            };
+
+            xhr.send();
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>
