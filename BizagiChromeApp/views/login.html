@@ -1,0 +1,23 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="../css/pure-min.css">
+</head>
+
+<body>
+	<form class="pure-form">
+		<legend>Setup your main Bizagi App</legend>
+		<fieldset>
+			<input id="txtBizagiUrl" type="url" class="pure-input-2-3" placeholder="Bizagi BPM Url" value="http://dev-jimmyc/BizAgiR110x/">
+			<fieldset class="pure-group">
+				<input id="txtUsername" type="text" class="pure-input-1-2" placeholder="Username">
+				<input id="txtPassword" type="text" class="pure-input-1-2" type="password" placeholder="Password">
+			</fieldset>
+			<button id="btnLogin" type="submit" class="pure-button pure-button-primary">Go!</button>
+		</fieldset>
+	</form>
+	<webview id="viewBizagiPage" style="width: 100%; height: 100%;"></webview>
+	<script src="../app/login.js"></script>
+</body>
+
+</html>

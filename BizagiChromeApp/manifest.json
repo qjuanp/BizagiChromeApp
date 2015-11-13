@@ -7,12 +7,14 @@
         "128": "icon_128.png"
     },
     "permissions": [
-        "notifications"
+        "notifications",
+        "webview",
+        "storage"
     ],
     "app": {
         "background": {
             "scripts": [
-                "libs/notify.js",
+                "libs/chrome-storage.js",
                 "app/notification.js",
                 "app/services.js",
                 "app.js",

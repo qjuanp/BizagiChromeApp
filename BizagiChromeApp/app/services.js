@@ -26,7 +26,7 @@ function getNotifications() {
 		description : "Case: " + idNotification1 + "\n"
 					 +"Task: " + Math.floor((Math.random() * 10) + 1) + "\n"
 					 +"State: Warning!",
-		url : "http://lifeandcode.io/" + idNotification1,
+		url : "http://dev-jimmyc/BizAgiR110x/index.html?widget=activityform&idCase=601",
 		notificationType : "state_red",
 	};
 	
