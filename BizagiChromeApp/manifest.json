@@ -14,6 +14,7 @@
         "background": {
             "scripts": [
                 "libs/chrome-storage.js",
+                "libs/request.js",
                 "app/notification.js",
                 "app/services.js",
                 "app.js",

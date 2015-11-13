@@ -8,14 +8,16 @@
 	<form class="pure-form">
 		<legend>Setup your main Bizagi App</legend>
 		<fieldset>
-			<input id="txtBizagiUrl" type="url" class="pure-input-2-3" placeholder="Bizagi BPM Url" value="http://dev-jimmyc/BizAgiR110x/">
+			<input id="txtBizagiUrl" type="url" class="pure-input-2-3" placeholder="Bizagi BPM Url" value="http://dev-paulac/BizAgiR110x/">
 			<fieldset class="pure-group">
-				<input id="txtUsername" type="text" class="pure-input-1-2" placeholder="Username">
-				<input id="txtPassword" type="text" class="pure-input-1-2" type="password" placeholder="Password">
+				<input id="txtUsername" type="text" class="pure-input-1-2" placeholder="Username" value="pcastellanos" />
+				<input id="txtPassword" type="password" class="pure-input-1-2" placeholder="Password" value="123123" />
 			</fieldset>
 			<button id="btnLogin" type="submit" class="pure-button pure-button-primary">Go!</button>
 		</fieldset>
 	</form>
+	<script src="../libs/chrome-storage.js"></script>
+	<script src="../libs/request.js"></script>
 	<script src="../app/login.js"></script>
 </body>
 
