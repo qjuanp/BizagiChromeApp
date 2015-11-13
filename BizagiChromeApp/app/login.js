@@ -11,7 +11,6 @@ window.onload = function () {
 		
 
 		console.log("The user need to start " + bizagiUrl);
-		document.querySelector('#viewBizagiPage').setAttribute('src', bizagiUrl);
 	});
 }
 
